@@ -1,12 +1,15 @@
-import React from 'react';
+import HomeRouter from './Pages/Home/Home.Router';
+import React, { Fragment } from 'react';
 import Layout from './Layouts/Layout';
-import Home from './Pages/Home/Home';
+import { RouteWrapper } from './Routers/RouteWrapper';
 
 const AppRouter = () => {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <Fragment>
+      <Layout>
+        <RouteWrapper Render={HomeRouter} base="/" />
+      </Layout>
+    </Fragment>
   );
 };
 
