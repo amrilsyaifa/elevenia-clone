@@ -4,7 +4,24 @@ exports[`App should render expect snapshoot 1`] = `
 <div>
   <div>
     <div>
-      Home, 
+      <div>
+        Home, 
+      </div>
+      <div>
+        <button
+          aria-label="Increment value"
+        >
+          Increment
+        </button>
+        <span>
+          0
+        </span>
+        <button
+          aria-label="Decrement value"
+        >
+          Decrement
+        </button>
+      </div>
     </div>
   </div>
 </div>
