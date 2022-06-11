@@ -1,10 +1,10 @@
 import React from 'react';
-import { Layout as AntdLayout, Breadcrumb, Row, Col } from 'antd';
-import 'antd/dist/antd.css';
+import { Layout as AntdLayout } from 'antd';
+import 'antd/dist/antd.min.css';
 import PageHeader from 'src/Reusables/Components/PageHeader';
 import Style from './Layout.module.scss';
 
-const { Content, Header, Footer } = AntdLayout;
+const { Content } = AntdLayout;
 
 interface ILayout {
   children: React.ReactNode;

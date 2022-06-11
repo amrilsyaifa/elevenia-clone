@@ -1,0 +1,41 @@
+@import 'src/Reusables/Styles/Variables';
+
+.title {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.wrapper-cost {
+  display: flex;
+  flex-direction: row;
+  .percentage {
+    font-size: 20px;
+    font-weight: 700;
+    // color: $red;
+  }
+  .wrapper-price {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    .old-price {
+      font-size: 12px;
+      text-decoration: line-through;
+      color: $grey;
+    }
+    .price {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
+
+.wrapper-location {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: 13px;
+  .name {
+    padding-left: 5px;
+  }
+}
