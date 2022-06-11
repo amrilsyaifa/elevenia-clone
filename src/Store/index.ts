@@ -6,10 +6,11 @@ import rootReducer from './Reducers/RootReducer';
 
 const persistConfig = {
   key: 'root',
-  storage
+  storage,
+  whitelist: ['checkout']
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

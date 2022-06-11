@@ -1,6 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup } from 'src/Reusables/Mocks/test-utils';
 import React from 'react';
-import Layout from './Layout';
+import Layout from '../Layout';
+import { MatchMediaObject } from 'src/Reusables/Mocks/MatchMediaObjectTest';
+
+afterEach(cleanup);
+beforeEach(() => {
+  MatchMediaObject();
+});
 
 describe('Layout', () => {
   test('Layout Render Snapshoot', () => {

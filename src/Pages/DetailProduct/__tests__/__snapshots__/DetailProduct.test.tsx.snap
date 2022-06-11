@@ -3,7 +3,25 @@
 exports[`DetailProduct DetailProduct Render Snapshoot 1`] = `
 <div>
   <div>
-    DetailProduct
+    <div>
+      DetailProduct
+    </div>
+    <button
+      class="ant-btn ant-btn-primary"
+      type="button"
+    >
+      <span>
+        Add to Chart
+      </span>
+    </button>
+    <button
+      class="ant-btn ant-btn-primary ant-btn-dangerous"
+      type="button"
+    >
+      <span>
+        Remove to Chart
+      </span>
+    </button>
   </div>
 </div>
 `;

@@ -1,6 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup } from 'src/Reusables/Mocks/test-utils';
 import React from 'react';
 import PageHeader from '../PageHeader';
+import { MatchMediaObject } from 'src/Reusables/Mocks/MatchMediaObjectTest';
+
+afterEach(cleanup);
+beforeEach(() => {
+  MatchMediaObject();
+});
 
 describe('PageHeader', () => {
   test('PageHeader Render Snapshoot', () => {
