@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader PageHeader Render Snapshoot 1`] = `
+<div>
+  <div
+    class="ant-page-header site-page-header ant-page-header-ghost"
+  >
+    <div
+      class="ant-page-header-heading"
+    >
+      <div
+        class="ant-page-header-heading-left"
+      >
+        <span
+          class="ant-page-header-heading-title"
+          title="Title"
+        >
+          Title
+        </span>
+        <span
+          class="ant-page-header-heading-sub-title"
+          title="This is a subtitle"
+        >
+          This is a subtitle
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

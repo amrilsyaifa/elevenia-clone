@@ -2,27 +2,70 @@
 
 exports[`App should render expect snapshoot 1`] = `
 <div>
-  <div>
-    <div>
-      <div>
-        Home
-      </div>
-      <div>
-        <button
-          aria-label="Increment value"
+  <div
+    class="layout-content"
+  >
+    <section
+      class="ant-layout"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="ant-page-header site-page-header ant-page-header-ghost"
         >
-          Increment
-        </button>
-        <span>
-          0
-        </span>
-        <button
-          aria-label="Decrement value"
+          <div
+            class="ant-page-header-heading"
+          >
+            <div
+              class="ant-page-header-heading-left"
+            >
+              <span
+                class="ant-page-header-heading-title"
+                title="Title"
+              >
+                Title
+              </span>
+              <span
+                class="ant-page-header-heading-sub-title"
+                title="This is a subtitle"
+              >
+                This is a subtitle
+              </span>
+            </div>
+          </div>
+        </div>
+        <main
+          class="ant-layout-content"
+          style="padding: 0px 50px;"
         >
-          Decrement
-        </button>
+          <div
+            class="site-layout-content"
+          >
+            <div>
+              <div>
+                Home
+              </div>
+              <div>
+                <button
+                  aria-label="Increment value"
+                >
+                  Increment
+                </button>
+                <span>
+                  0
+                </span>
+                <button
+                  aria-label="Decrement value"
+                >
+                  Decrement
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
-    </div>
+    </section>
   </div>
 </div>
 `;
