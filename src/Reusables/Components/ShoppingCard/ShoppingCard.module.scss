@@ -1,9 +1,21 @@
 @import 'src/Reusables/Styles/Variables';
 
+.card {
+  width: 250px;
+  min-height: 430px;
+  cursor: pointer;
+}
 .title {
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: inline;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
 }
 
 .wrapper-cost {
@@ -12,12 +24,17 @@
   .percentage {
     font-size: 20px;
     font-weight: 700;
-    // color: $red;
+    display: inline;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
   }
   .wrapper-price {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
     .old-price {
       font-size: 12px;
       text-decoration: line-through;

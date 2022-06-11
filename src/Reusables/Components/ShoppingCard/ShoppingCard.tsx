@@ -1,34 +1,32 @@
 import { Typography, Card, Image } from 'antd';
 import React from 'react';
-import { ShopOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { ShopOutlined, EnvironmentOutlined, StockOutlined } from '@ant-design/icons';
 import Style from './ShoppingCard.module.scss';
 
 const { Text } = Typography;
 
 interface IShoppingCard {
-  isLoading: boolean;
+  isLoading?: boolean;
   url?: string;
   title: string;
-  percentage: number;
-  oldPrice: number;
+  sellerItem: string;
   price: number;
-  storeName: string;
-  location: string;
+  stock: string | number;
+  sellCount: string | number;
 }
 
 const ShoppingCard: React.FC<IShoppingCard> = ({
   isLoading,
   title,
-  percentage,
-  oldPrice,
+  sellerItem,
   price,
-  storeName,
-  location,
+  stock,
+  sellCount,
   url
 }) => {
   return (
     <>
-      <Card style={{ width: 250, minHeight: 400 }} loading={isLoading}>
+      <Card className={Style['card']} loading={isLoading}>
         <Image
           width={200}
           height={200}
@@ -38,21 +36,20 @@ const ShoppingCard: React.FC<IShoppingCard> = ({
         <div className={Style['title']}>
           <Text>{title}</Text>
         </div>
+        <Text className={Style['percentage']}>Seller’s Item: {sellerItem || '-'}</Text>
         <div className={Style['wrapper-cost']}>
-          <Text className={Style['percentage']}>{percentage}%</Text>
           <div className={Style['wrapper-price']}>
-            <Text className={Style['old-price']}>{oldPrice}</Text>
             <Text className={Style['price']}>{price}</Text>
           </div>
         </div>
         <div className={Style['wrapper-location']}>
           <div>
-            <ShopOutlined />
-            <Text className={Style['name']}>{storeName}</Text>
+            <StockOutlined />
+            <Text className={Style['name']}>Stok: {stock}</Text>
           </div>
           <div>
             <EnvironmentOutlined />
-            <Text className={Style['name']}>{location}</Text>
+            <Text className={Style['name']}>Terjual: {sellCount}</Text>
           </div>
         </div>
       </Card>

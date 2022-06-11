@@ -5,15 +5,7 @@ import ShoppingCard from '../ShoppingCard';
 describe('ShoppingCard', () => {
   test('ShoppingCard Render with empty data', () => {
     const { container } = render(
-      <ShoppingCard
-        isLoading={false}
-        title={''}
-        percentage={0}
-        oldPrice={0}
-        price={0}
-        storeName={''}
-        location={''}
-      />
+      <ShoppingCard isLoading={false} title={''} sellerItem="" stock={0} price={0} sellCount={''} />
     );
     const getTitleText = screen.queryByText('Title');
     expect(getTitleText).toBeNull();
@@ -24,11 +16,10 @@ describe('ShoppingCard', () => {
       <ShoppingCard
         isLoading={true}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem=""
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
     const getTitleText = screen.queryByText('Title');
@@ -40,90 +31,70 @@ describe('ShoppingCard', () => {
       <ShoppingCard
         isLoading={false}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem=""
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
     const getTitleText = screen.queryByText('Title');
     expect(getTitleText).toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });
-  test('ShoppingCard Render have percentage value', () => {
+  test('ShoppingCard Render have sellerItem value', () => {
     render(
       <ShoppingCard
         isLoading={false}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem="seller item"
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
-    const getPercentageText = screen.queryByText('10%');
-    expect(getPercentageText).toBeInTheDocument();
+    const getSellerItemText = screen.getByText('Seller’s Item: seller item');
+    expect(getSellerItemText).toBeInTheDocument();
   });
-  test('ShoppingCard Render have oldPrice value', () => {
+  test('ShoppingCard Render have stock value', () => {
     render(
       <ShoppingCard
         isLoading={false}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem=""
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
-    const getOldPriceText = screen.queryByText('10000');
-    expect(getOldPriceText).toBeInTheDocument();
+    const getStockText = screen.queryByText('Stok: 10000');
+    expect(getStockText).toBeInTheDocument();
   });
   test('ShoppingCard Render have price value', () => {
     render(
       <ShoppingCard
         isLoading={false}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem=""
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
     const getPriceText = screen.queryByText('5000');
     expect(getPriceText).toBeInTheDocument();
   });
-  test('ShoppingCard Render have storeName value', () => {
+  test('ShoppingCard Render have sellCount value', () => {
     render(
       <ShoppingCard
         isLoading={false}
         title={'Title'}
-        percentage={10}
-        oldPrice={10000}
+        sellerItem=""
+        stock={10000}
         price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
+        sellCount={100}
       />
     );
-    const getStoreNameText = screen.queryByText('Yasin Store');
-    expect(getStoreNameText).toBeInTheDocument();
-  });
-  test('ShoppingCard Render have location value', () => {
-    render(
-      <ShoppingCard
-        isLoading={false}
-        title={'Title'}
-        percentage={10}
-        oldPrice={10000}
-        price={5000}
-        storeName={'Yasin Store'}
-        location={'Medan'}
-      />
-    );
-    const getLocationText = screen.queryByText('Medan');
-    expect(getLocationText).toBeInTheDocument();
+    const getSellCountText = screen.queryByText('Terjual: 100');
+    expect(getSellCountText).toBeInTheDocument();
   });
 });

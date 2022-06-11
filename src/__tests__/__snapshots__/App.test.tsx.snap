@@ -43,156 +43,104 @@ exports[`App should render expect snapshoot 1`] = `
             class="site-layout-content"
           >
             <div>
-              <div>
-                Home
-              </div>
-              <div>
-                <button
-                  aria-label="Increment value"
-                >
-                  Increment
-                </button>
-                <span>
-                  0
-                </span>
-                <button
-                  aria-label="Decrement value"
-                >
-                  Decrement
-                </button>
-              </div>
               <div
-                class="ant-card ant-card-bordered"
-                style="width: 250px; min-height: 400px;"
+                class="infinite-scroll-component__outerdiv"
               >
                 <div
-                  class="ant-card-body"
+                  class="infinite-scroll-component "
+                  style="height: auto; overflow: auto;"
                 >
                   <div
-                    class="ant-image"
-                    style="width: 200px; height: 200px;"
+                    class="ant-list ant-list-split ant-list-grid"
                   >
-                    <img
-                      class="ant-image-img"
-                      src="error"
-                      style="height: 200px;"
-                    />
                     <div
-                      class="ant-image-mask"
+                      class="ant-spin-nested-loading"
                     >
                       <div
-                        class="ant-image-mask-info"
+                        class="ant-spin-container"
                       >
-                        <span
-                          aria-label="eye"
-                          class="anticon anticon-eye"
-                          role="img"
+                        <div
+                          class="ant-list-empty-text"
                         >
-                          <svg
-                            aria-hidden="true"
-                            data-icon="eye"
-                            fill="currentColor"
-                            focusable="false"
-                            height="1em"
-                            viewBox="64 64 896 896"
-                            width="1em"
+                          <div
+                            class="ant-empty ant-empty-normal"
                           >
-                            <path
-                              d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"
-                            />
-                          </svg>
-                        </span>
-                        Preview
+                            <div
+                              class="ant-empty-image"
+                            >
+                              <svg
+                                class="ant-empty-img-simple"
+                                height="41"
+                                viewBox="0 0 64 41"
+                                width="64"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g
+                                  fill="none"
+                                  fill-rule="evenodd"
+                                  transform="translate(0 1)"
+                                >
+                                  <ellipse
+                                    class="ant-empty-img-simple-ellipse"
+                                    cx="32"
+                                    cy="33"
+                                    rx="32"
+                                    ry="7"
+                                  />
+                                  <g
+                                    class="ant-empty-img-simple-g"
+                                    fill-rule="nonzero"
+                                  >
+                                    <path
+                                      d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+                                    />
+                                    <path
+                                      class="ant-empty-img-simple-path"
+                                      d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                                    />
+                                  </g>
+                                </g>
+                              </svg>
+                            </div>
+                            <div
+                              class="ant-empty-description"
+                            >
+                              No Data
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div
-                    class="title"
+                    class="loading-wrapper"
                   >
-                    <span
-                      class="ant-typography"
-                    >
-                      Dolor sit consequat mollit nisi in.
-                    </span>
-                  </div>
-                  <div
-                    class="wrapper-cost"
-                  >
-                    <span
-                      class="ant-typography percentage"
-                    >
-                      90
-                      %
-                    </span>
                     <div
-                      class="wrapper-price"
+                      aria-busy="true"
+                      aria-live="polite"
+                      class="ant-spin ant-spin-spinning ant-spin-show-text"
                     >
                       <span
-                        class="ant-typography old-price"
+                        class="ant-spin-dot ant-spin-dot-spin"
                       >
-                        20000
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
+                        <i
+                          class="ant-spin-dot-item"
+                        />
                       </span>
-                      <span
-                        class="ant-typography price"
+                      <div
+                        class="ant-spin-text"
                       >
-                        10000
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="wrapper-location"
-                  >
-                    <div>
-                      <span
-                        aria-label="shop"
-                        class="anticon anticon-shop"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="shop"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M882 272.1V144c0-17.7-14.3-32-32-32H174c-17.7 0-32 14.3-32 32v128.1c-16.7 1-30 14.9-30 31.9v131.7a177 177 0 0014.4 70.4c4.3 10.2 9.6 19.8 15.6 28.9v345c0 17.6 14.3 32 32 32h676c17.7 0 32-14.3 32-32V535a175 175 0 0015.6-28.9c9.5-22.3 14.4-46 14.4-70.4V304c0-17-13.3-30.9-30-31.9zM214 184h596v88H214v-88zm362 656.1H448V736h128v104.1zm234 0H640V704c0-17.7-14.3-32-32-32H416c-17.7 0-32 14.3-32 32v136.1H214V597.9c2.9 1.4 5.9 2.8 9 4 22.3 9.4 46 14.1 70.4 14.1s48-4.7 70.4-14.1c13.8-5.8 26.8-13.2 38.7-22.1.2-.1.4-.1.6 0a180.4 180.4 0 0038.7 22.1c22.3 9.4 46 14.1 70.4 14.1 24.4 0 48-4.7 70.4-14.1 13.8-5.8 26.8-13.2 38.7-22.1.2-.1.4-.1.6 0a180.4 180.4 0 0038.7 22.1c22.3 9.4 46 14.1 70.4 14.1 24.4 0 48-4.7 70.4-14.1 3-1.3 6-2.6 9-4v242.2zm30-404.4c0 59.8-49 108.3-109.3 108.3-40.8 0-76.4-22.1-95.2-54.9-2.9-5-8.1-8.1-13.9-8.1h-.6c-5.7 0-11 3.1-13.9 8.1A109.24 109.24 0 01512 544c-40.7 0-76.2-22-95-54.7-3-5.1-8.4-8.3-14.3-8.3s-11.4 3.2-14.3 8.3a109.63 109.63 0 01-95.1 54.7C233 544 184 495.5 184 435.7v-91.2c0-.3.2-.5.5-.5h655c.3 0 .5.2.5.5v91.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="ant-typography name"
-                      >
-                        Yasin Tech
-                      </span>
-                    </div>
-                    <div>
-                      <span
-                        aria-label="environment"
-                        class="anticon anticon-environment"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="environment"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="64 64 896 896"
-                          width="1em"
-                        >
-                          <path
-                            d="M854.6 289.1a362.49 362.49 0 00-79.9-115.7 370.83 370.83 0 00-118.2-77.8C610.7 76.6 562.1 67 512 67c-50.1 0-98.7 9.6-144.5 28.5-44.3 18.3-84 44.5-118.2 77.8A363.6 363.6 0 00169.4 289c-19.5 45-29.4 92.8-29.4 142 0 70.6 16.9 140.9 50.1 208.7 26.7 54.5 64 107.6 111 158.1 80.3 86.2 164.5 138.9 188.4 153a43.9 43.9 0 0022.4 6.1c7.8 0 15.5-2 22.4-6.1 23.9-14.1 108.1-66.8 188.4-153 47-50.4 84.3-103.6 111-158.1C867.1 572 884 501.8 884 431.1c0-49.2-9.9-97-29.4-142zM512 880.2c-65.9-41.9-300-207.8-300-449.1 0-77.9 31.1-151.1 87.6-206.3C356.3 169.5 431.7 139 512 139s155.7 30.5 212.4 85.9C780.9 280 812 353.2 812 431.1c0 241.3-234.1 407.2-300 449.1zm0-617.2c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm79.2 255.2A111.6 111.6 0 01512 551c-29.9 0-58-11.7-79.2-32.8A111.6 111.6 0 01400 439c0-29.9 11.7-58 32.8-79.2C454 338.6 482.1 327 512 327c29.9 0 58 11.6 79.2 32.8C612.4 381 624 409.1 624 439c0 29.9-11.6 58-32.8 79.2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="ant-typography name"
-                      >
-                        Medan
-                      </span>
+                        Loading...
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,12 +1,29 @@
 import { isEmpty } from 'src/Reusables/Helpers/CommonFunctions';
+import { useState } from 'react';
 import XMLParser from 'react-xml-parser';
 import Api from 'src/Reusables/Services/Api.Services';
 
+// url={item.url}
+//                 title={item.prdNm}
+//                 sellerItem={item.sellerPrdCd}
+//                 price={item.selPrc}
+//                 stock={item.stock}
+//                 sellCount={item.prdSelQty}
+export interface IListDataProduct {
+  url?: string;
+  prdNm: string;
+  sellerPrdCd: string;
+  selPrc: string;
+  stock: string;
+  prdSelQty: string;
+}
+
 const useHome = () => {
-  const onFetchData = async () => {
+  const [page, setPage] = useState<number>(1);
+  const onFetchData = async (params?: number) => {
     try {
-      const data: any = [];
-      const response = await Api.get('prodservices/product/listing?page=1');
+      const data: IListDataProduct[] = [];
+      const response = await Api.get(`prodservices/product/listing?page=${params || page}`);
       const news = new XMLParser().parseFromString(response.data);
       for (const i in news) {
         if (!isEmpty(news[i]) && news[i].length > 0 && Array.isArray(news[i])) {
@@ -20,19 +37,27 @@ const useHome = () => {
                   [product[k].name]: product[k].value
                 });
               }
-              data.push(productObject);
+              data.push(productObject as IListDataProduct);
             }
           }
         }
       }
-      console.log('response ', data);
+      console.log('news ', news);
+      return data;
     } catch (error) {
-      console.log('catch error ', error);
+      return [];
     }
+  };
+  const loadMoreData = async () => {
+    const nextPage = page + 1;
+    setPage(nextPage);
+    const response = await onFetchData(nextPage);
+    return response;
   };
 
   return {
-    onFetchData
+    onFetchData,
+    loadMoreData
   };
 };
 

@@ -1,47 +1,68 @@
-import React, { useEffect } from 'react';
-
-import { useAppSelector, useAppDispatch } from 'src/Hooks/useReduxHooks';
+import React, { useEffect, useState } from 'react';
+import { List, Spin, Divider } from 'antd';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import ShoppingCard from 'src/Reusables/Components/ShoppingCard';
-
-import { decrement, increment } from 'src/Store/Reducers/Auth.Reducers';
-import useHome from './Hooks/useHome';
+import useHome, { IListDataProduct } from './Hooks/useHome';
+import Style from './Home.module.scss';
 
 const Home = () => {
-  // The `state` arg is correctly typed as `RootState` already
-  const count = useAppSelector((state) => state.auth.value);
-  const dispatch = useAppDispatch();
+  const { onFetchData, loadMoreData } = useHome();
 
-  const { onFetchData } = useHome();
+  const [data, setData] = useState<IListDataProduct[]>([]);
 
   useEffect(() => {
     onFetchingData();
   }, []);
 
-  const onFetchingData = () => {
-    onFetchData();
+  const onFetchingData = async () => {
+    const response = await onFetchData();
+    setData(response);
+  };
+
+  const onLoadMoreData = async () => {
+    const response: IListDataProduct[] = await loadMoreData();
+    const newData: IListDataProduct[] = [...data, ...response];
+    setData(newData);
   };
 
   return (
     <div>
-      <div>Home</div>
-      <div>
-        <button aria-label="Increment value" onClick={() => dispatch(increment())}>
-          Increment
-        </button>
-        <span>{count}</span>
-        <button aria-label="Decrement value" onClick={() => dispatch(decrement())}>
-          Decrement
-        </button>
-      </div>
-      <ShoppingCard
-        isLoading={false}
-        title="Dolor sit consequat mollit nisi in."
-        percentage={90}
-        price={10000}
-        oldPrice={20000}
-        storeName="Yasin Tech"
-        location="Medan"
-      />
+      <InfiniteScroll
+        dataLength={data.length}
+        next={onLoadMoreData}
+        hasMore={data.length < 200}
+        loader={
+          <div className={Style['loading-wrapper']}>
+            <Spin tip="Loading..." />
+          </div>
+        }
+        endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
+        scrollableTarget="scrollableDiv">
+        <List
+          grid={{
+            gutter: 4,
+            xs: 4,
+            sm: 4,
+            md: 4,
+            lg: 4,
+            xl: 4,
+            xxl: 4
+          }}
+          dataSource={data}
+          renderItem={(item: any) => (
+            <List.Item>
+              <ShoppingCard
+                url={item.url}
+                title={item.prdNm}
+                sellerItem={item.sellerPrdCd}
+                price={item.selPrc}
+                stock={item.stock}
+                sellCount={item.prdSelQty}
+              />
+            </List.Item>
+          )}
+        />
+      </InfiniteScroll>
     </div>
   );
 };
