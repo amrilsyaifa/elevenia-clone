@@ -10,7 +10,7 @@ describe('PageHeader', () => {
 
   test('PageHeader Have Title', () => {
     render(<PageHeader />);
-    const titleHeader = screen.getByText('Title');
+    const titleHeader = screen.getByText('Login');
     expect(titleHeader).toBeInTheDocument();
   });
 });

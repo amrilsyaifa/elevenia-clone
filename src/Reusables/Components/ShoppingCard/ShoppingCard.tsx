@@ -1,6 +1,6 @@
 import { Typography, Card, Image } from 'antd';
 import React from 'react';
-import { ShopOutlined, EnvironmentOutlined, StockOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, StockOutlined } from '@ant-design/icons';
 import Style from './ShoppingCard.module.scss';
 
 const { Text } = Typography;

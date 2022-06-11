@@ -14,8 +14,12 @@ const Layout: React.FC<ILayout> = ({ children }) => {
   return (
     <div className={Style['layout-content']}>
       <AntdLayout>
+        <div className={Style['page-header-container']}>
+          <div className={Style['page-header']}>
+            <PageHeader />
+          </div>
+        </div>
         <div className={Style['container']}>
-          <PageHeader />
           <Content style={{ padding: '0 50px' }}>
             <div className={Style['site-layout-content']}>{children}</div>
           </Content>
