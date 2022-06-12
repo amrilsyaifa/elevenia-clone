@@ -24,7 +24,12 @@ const Checkout = () => {
             </div>
           ]}>
           <List.Item.Meta
-            avatar={<Image src={item.url || '/assets/images/default-image.jpeg'} width={60} />}
+            avatar={
+              <Image
+                src={item.url || item.prdImage01 || '/assets/images/default-image.jpeg'}
+                width={60}
+              />
+            }
             title={<a href={item.prdNm}>{item.prdNm}</a>}
             description={'-'}
           />

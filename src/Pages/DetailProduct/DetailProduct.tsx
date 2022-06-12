@@ -29,7 +29,6 @@ const DetailProduct = () => {
       setDisplayImage(result.prdImage01);
     }
   };
-  console.log('isi data ', data);
   if (match) {
     return (
       <div>
