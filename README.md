@@ -50,4 +50,3 @@ https://cors-anywhere.herokuapp.com/corsdemo
 ```
 
 ![Cors Permission](document/images/cors-permissions.png?raw=true 'Cors Permission')
-Guidelines for bug reports:
