@@ -7,9 +7,9 @@ interface IBasket {
   total: number;
   onClick?: () => void;
 }
+const { Text } = Typography;
 
 const Basket: React.FC<IBasket> = ({ total, onClick }) => {
-  const { Text } = Typography;
   return (
     <div className={Style['container']} onClick={onClick} data-testid="basket">
       <div className={Style['wrapper-number']}>

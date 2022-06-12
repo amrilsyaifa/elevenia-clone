@@ -42,7 +42,6 @@ const useHome = () => {
           }
         }
       }
-      console.log('news ', news);
       return data;
     } catch (error) {
       return [];
