@@ -56,9 +56,11 @@ const ShoppingCard: React.FC<IShoppingCard> = ({
             <Text className={Style['name']}>Terjual: {sellCount}</Text>
           </div>
         </div>
-        <Button type="primary" onClick={onAddToCart}>
-          Add to Chart
-        </Button>
+        <div className={Style['button']}>
+          <Button type="primary" onClick={onAddToCart}>
+            Add to Chart
+          </Button>
+        </div>
       </Card>
     </>
   );

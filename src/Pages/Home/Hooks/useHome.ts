@@ -11,6 +11,10 @@ export interface IListDataProduct {
   stock: string;
   prdSelQty: string;
   prdNo?: string;
+  prdImage01?: string;
+  prdImage02?: string;
+  prdImage03?: string;
+  prdImage04?: string;
 }
 
 const useHome = () => {

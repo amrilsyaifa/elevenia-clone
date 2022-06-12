@@ -67,7 +67,7 @@ const Home = () => {
           renderItem={(item: IListDataProduct) => (
             <List.Item>
               <ShoppingCard
-                url={item.url}
+                url={item.prdImage01}
                 title={item.prdNm}
                 sellerItem={item.sellerPrdCd}
                 price={item.selPrc}

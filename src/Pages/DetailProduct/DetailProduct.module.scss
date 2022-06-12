@@ -12,6 +12,14 @@
   .wrap-image {
     display: inherit;
     flex-direction: column;
+    .wrap-image-small {
+      margin-top: 5px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
     .wrap-box {
       display: inherit;
       flex-direction: row;

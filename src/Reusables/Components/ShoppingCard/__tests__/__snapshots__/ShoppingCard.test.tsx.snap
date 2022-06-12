@@ -129,14 +129,18 @@ exports[`ShoppingCard ShoppingCard Render with empty data 1`] = `
           </span>
         </div>
       </div>
-      <button
-        class="ant-btn ant-btn-primary"
-        type="button"
+      <div
+        class="button"
       >
-        <span>
-          Add to Chart
-        </span>
-      </button>
+        <button
+          class="ant-btn ant-btn-primary"
+          type="button"
+        >
+          <span>
+            Add to Chart
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -274,14 +278,18 @@ exports[`ShoppingCard ShoppingCard Render with loading false 1`] = `
           </span>
         </div>
       </div>
-      <button
-        class="ant-btn ant-btn-primary"
-        type="button"
+      <div
+        class="button"
       >
-        <span>
-          Add to Chart
-        </span>
-      </button>
+        <button
+          class="ant-btn ant-btn-primary"
+          type="button"
+        >
+          <span>
+            Add to Chart
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
