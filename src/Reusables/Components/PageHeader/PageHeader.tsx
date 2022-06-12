@@ -27,7 +27,7 @@ const PageHeader: React.FC = () => {
         </div>
       </div>
       <div className={Style['header-wrapper']}>
-        <img src="/assets/images/logo.png" alt="logo" />
+        <img src="/assets/images/logo.png" alt="logo" onClick={() => go('/')} />
         <Search
           className={Style['search']}
           placeholder="Cari Produk"

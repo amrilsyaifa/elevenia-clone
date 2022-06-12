@@ -1,4 +1,4 @@
-import { Typography, Card, Image } from 'antd';
+import { Typography, Card, Image, Button } from 'antd';
 import React from 'react';
 import { EnvironmentOutlined, StockOutlined } from '@ant-design/icons';
 import Style from './ShoppingCard.module.scss';
@@ -10,9 +10,11 @@ interface IShoppingCard {
   url?: string;
   title: string;
   sellerItem: string;
-  price: number;
+  price: number | string;
   stock: string | number;
   sellCount: string | number;
+  onAddToCart?: (e) => void;
+  onClick: (e) => void;
 }
 
 const ShoppingCard: React.FC<IShoppingCard> = ({
@@ -22,11 +24,13 @@ const ShoppingCard: React.FC<IShoppingCard> = ({
   price,
   stock,
   sellCount,
-  url
+  url,
+  onClick,
+  onAddToCart
 }) => {
   return (
     <>
-      <Card className={Style['card']} loading={isLoading}>
+      <Card className={Style['card']} loading={isLoading} onClick={onClick}>
         <Image
           width={200}
           height={200}
@@ -52,6 +56,9 @@ const ShoppingCard: React.FC<IShoppingCard> = ({
             <Text className={Style['name']}>Terjual: {sellCount}</Text>
           </div>
         </div>
+        <Button type="primary" onClick={onAddToCart}>
+          Add to Chart
+        </Button>
       </Card>
     </>
   );

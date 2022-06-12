@@ -4,8 +4,13 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import ShoppingCard from 'src/Reusables/Components/ShoppingCard';
 import useHome, { IListDataProduct } from './Hooks/useHome';
 import Style from './Home.module.scss';
+import { useAppDispatch } from 'src/Hooks/useReduxHooks';
+import { addDataCheckout } from 'src/Store/Reducers/Checkout.Reducers';
+import { useLocation } from 'wouter';
 
 const Home = () => {
+  const [, setLocation] = useLocation();
+  const dispatch = useAppDispatch();
   const { onFetchData, loadMoreData } = useHome();
 
   const [data, setData] = useState<IListDataProduct[]>([]);
@@ -23,6 +28,16 @@ const Home = () => {
     const response: IListDataProduct[] = await loadMoreData();
     const newData: IListDataProduct[] = [...data, ...response];
     setData(newData);
+  };
+
+  const onNavigate = (event, item: IListDataProduct) => {
+    console.log('isi ', item);
+    setLocation(`detail-product/detail/${item.prdNo}`);
+  };
+
+  const onAddToChart = (event, item: IListDataProduct) => {
+    event.stopPropagation();
+    dispatch(addDataCheckout(item));
   };
 
   return (
@@ -49,7 +64,7 @@ const Home = () => {
             xxl: 4
           }}
           dataSource={data}
-          renderItem={(item: any) => (
+          renderItem={(item: IListDataProduct) => (
             <List.Item>
               <ShoppingCard
                 url={item.url}
@@ -58,6 +73,8 @@ const Home = () => {
                 price={item.selPrc}
                 stock={item.stock}
                 sellCount={item.prdSelQty}
+                onClick={(e) => onNavigate(e, item)}
+                onAddToCart={(e) => onAddToChart(e, item)}
               />
             </List.Item>
           )}
