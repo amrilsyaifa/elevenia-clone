@@ -12,7 +12,7 @@ const DetailProduct = () => {
   const dispatch = useAppDispatch();
 
   const tempData = {
-    url: 'https://ant.design/components/button/',
+    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     prdNm: 'prdNm',
     sellerPrdCd: 'sellerPrdCd',
     selPrc: 'selPrc',

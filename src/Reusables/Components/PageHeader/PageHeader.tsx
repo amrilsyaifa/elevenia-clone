@@ -3,20 +3,27 @@ import React from 'react';
 import Basket from '../Basket';
 import { useAppSelector } from 'src/Hooks/useReduxHooks';
 import Style from './PageHeader.module.scss';
+import { useLocation } from 'wouter';
 
 const { Text } = Typography;
 const { Search } = Input;
 
 const PageHeader: React.FC = () => {
+  const [, go] = useLocation();
   const onSearch = (value: string) => console.log(value);
   const data = useAppSelector((state) => state.checkout.data);
+
+  const onNavigate = () => {
+    go('/detail-product/checkout');
+  };
+
   return (
     <div className={Style['container']}>
       <div className={Style['wrapper-right-text']}>
         <div className={Style['wrapper-text']}>
           <Text className={Style['text']}>Login</Text>
           <Text className={Style['text']}>Logout</Text>
-          <Basket total={data.length} />
+          <Basket total={data.length} onClick={onNavigate} />
         </div>
       </div>
       <div className={Style['header-wrapper']}>
