@@ -44,6 +44,7 @@ const useHome = () => {
           }
         }
       }
+      console.log('isi data ', data);
       return data;
     } catch (error) {
       setIsLoading(false);
